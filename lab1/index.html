@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Смачні Рецепти | Платформа обміну</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <header>
+        <h1>Світ Рецептів</h1>
+        <nav>
+            <ul>
+                <li><a href="#my-recipes">Рецепти</a></li>
+                <li><a href="#add-recipe">Створити рецепт</a></li>
+                <li><a href="#categories">Категорії</a></li>
+                <li><a href="#comments">Коментарі</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section id="categories">
+            <h2>Категорії страв</h2>
+            <div class="category-tags">
+                <a href="#my-recipes" class="tag">🥞 Сніданки</a>
+                <a href="#my-recipes" class="tag">🍲 Обіди та супи</a>
+                <a href="#my-recipes" class="tag">🍰 Десерти</a>
+                <a href="#my-recipes" class="tag">🥗 Вегетаріанські страви</a>
+                <a href="#my-recipes" class="tag">🥩 М'ясні страви</a>
+            </div>
+        </section>
+
+        <section id="add-recipe">
+            <h2>Додати свій рецепт</h2>
+            <p>Поділіться своїм кулінарним шедевром з іншими!</p>
+            <form action="#" class="recipe-form">
+                <div class="form-group">
+                    <label for="title">Назва страви:</label>
+                    <input type="text" id="title" placeholder="Наприклад, Гарбузовий крем-суп" required>
+                </div>
+                <div class="form-group">
+                    <label for="time">Час приготування (хв):</label>
+                    <input type="number" id="time" placeholder="45" required>
+                </div>
+                <div class="form-group">
+                    <label for="ingredients">Інгредієнти:</label>
+                    <textarea id="ingredients" rows="3" placeholder="Перерахуйте інгредієнти через кому..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="instructions">Інструкція приготування:</label>
+                    <textarea id="instructions" rows="5" placeholder="Опишіть кроки приготування..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="photo">Посилання на фото:</label>
+                    <input type="url" id="photo" placeholder="https://...">
+                </div>
+                <button type="submit" class="btn-submit">Опублікувати рецепт</button>
+            </form>
+        </section>
+
+        <section id="my-recipes">
+            <h2>Популярні рецепти</h2>
+            <div class="recipes-grid">
+                
+                <article class="recipe-card">
+                    <img src="https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?q=80&w=400" alt="Сирники">
+                    <h3>Ідеальні сирники</h3>
+                    <p><strong>Час:</strong> 25 хв</p>
+                    <p><strong>Інгредієнти:</strong> кисломолочний сир, яйця, цукор, борошно.</p>
+                    <p><strong>Інструкція:</strong> Змішати всі інгредієнти, сформувати сирники та обсмажити на сковорідці.</p>
+                </article>
+
+                <article class="recipe-card">
+                    <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?q=80&w=400" alt="Паста Карбонара">
+                    <h3>Паста Карбонара</h3>
+                    <p><strong>Час:</strong> 20 хв</p>
+                    <p><strong>Інгредієнти:</strong> спагетті, бекон, жовтки, сир пекоріно, перець.</p>
+                    <p><strong>Інструкція:</strong> Відварити пасту, обсмажити бекон, змішати жовтки з сиром. З'єднати все разом.</p>
+                </article>
+
+                <article class="recipe-card">
+                    <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=400" alt="Шоколадний фондан">
+                    <h3>Шоколадний фондан</h3>
+                    <p><strong>Час:</strong> 30 хв</p>
+                    <p><strong>Інгредієнти:</strong> чорний шоколад, вершкове масло, яйця, цукор, борошно.</p>
+                    <p><strong>Інструкція:</strong> Розтопити шоколад з маслом, збити яйця з цукром, змішати, випікати 10 хв при 200°C.</p>
+                </article>
+
+                <article class="recipe-card">
+                    <img src="https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?q=80&w=400" alt="Гарбузовий суп">
+                    <h3>Гарбузовий крем-суп</h3>
+                    <p><strong>Час:</strong> 40 хв</p>
+                    <p><strong>Інгредієнти:</strong> гарбуз, вершки, цибуля, часник, мускатний горіх.</p>
+                    <p><strong>Інструкція:</strong> Запекти гарбуз, підсмажити цибулю з часником, збити все блендером разом із вершками.</p>
+                </article>
+
+            </div>
+        </section>
+
+        <section id="comments">
+            <h2>Коментарі користувачів</h2>
+            <article class="comment">
+                <h4>Олена:</h4>
+                <p>"Сирники за вашим рецептом вийшли просто неймовірні! Дуже дякую!"</p>
+            </article>
+            <article class="comment">
+                <h4>Максим:</h4>
+                <p>"Карбонара — топ. Тільки я ще трохи часнику додав для аромату."</p>
+            </article>
+            <article class="comment">
+                <h4>Ірина:</h4>
+                <p>"Фондан пропікся ідеально, серединка рідка, як і має бути в ресторані!"</p>
+            </article>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Світ Рецептів. Всі права захищені.</p>
+        <p>Контакти: info@recipes-platform.com | +380 (99) 123-45-67</p>
+    </footer>
+
+</body>
+</html>
