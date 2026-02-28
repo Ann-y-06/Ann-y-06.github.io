@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Смачні Рецепти | Платформа обміну</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <header>
+        <h1>Світ Рецептів</h1>
+        <nav>
+            <ul>
+                <li><a href="#my-recipes">Рецепти</a></li>
+                <li><a href="#categories">Категорії</a></li>
+                <li><a href="#comments">Коментарі</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="categories">
+            <h2>Категорії страв</h2>
+            <div class="category-tags">
+                <a href="#my-recipes" class="tag">🥞 Сніданки</a>
+                <a href="#my-recipes" class="tag">🍲 Обіди та супи</a>
+                <a href="#my-recipes" class="tag">🍰 Десерти</a>
+                <a href="#my-recipes" class="tag">🥗 Вегетаріанські страви</a>
+                <a href="#my-recipes" class="tag">🥩 М'ясні страви</a>
+            </div>
+        </section>
+
+        <section id="my-recipes">
+            <h2>Рецепти</h2>
+            
+            <button id="show-form-btn" class="btn-submit" style="display: block; margin: 20px 0;">+ Додати рецепт</button>
+
+            <div id="recipe-form-container" class="hidden">
+                <form id="new-recipe-form" class="recipe-form">
+                    <h3>Створити новий рецепт</h3>
+                    <div class="form-group">
+                        <label for="new-title">Назва страви:</label>
+                        <input type="text" id="new-title" placeholder="Наприклад, Гарбузовий крем-суп" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-time">Час приготування (хв):</label>
+                        <input type="text" id="new-time" placeholder="45 хв" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-ingredients">Інгредієнти:</label>
+                        <textarea id="new-ingredients" rows="3" placeholder="Перерахуйте інгредієнти..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-instructions">Інструкція приготування:</label>
+                        <textarea id="new-instructions" rows="5" placeholder="Опишіть кроки..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-photo">Посилання на фото:</label>
+                        <input type="url" id="new-photo" placeholder="https://...">
+                    </div>
+                    <button type="submit" class="btn-submit">Опублікувати</button>
+                </form>
+            </div>
+
+            <div class="recipes-grid" id="recipes-container"></div>
+        </section>
+
+        <section id="comments">
+            <h2>Коментарі користувачів</h2>
+            <div id="comments-container"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Світ Рецептів. Всі права захищені.</p>
+        <p>Контакти: info@recipes-platform.com | +380 (99) 123-45-67</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
