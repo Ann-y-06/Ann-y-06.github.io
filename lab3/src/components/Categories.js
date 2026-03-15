@@ -1,46 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { db } from '../firebase';
+import { ref, onValue } from "firebase/database";
 
-// Компонент приймає поточну обрану категорію і функцію для її зміни
-function Categories({ selectedCategory, onSelectCategory }) {
-  // Список всіх можливих категорій + кнопка "Всі"
-  const categoriesList = [
-    "Всі", 
-    "Сніданки", 
-    "Обіди та супи", 
-    "Десерти", 
-    "Вегетаріанські страви", 
-    "М'ясні страви"
-  ];
+const Categories = ({ selectedCategory, onSelectCategory }) => {
+  const [categories, setCategories] = useState(["Всі"]);
+
+  useEffect(() => {
+    // Посилання на шлях 'categories' у базі 
+    const categoriesRef = ref(db, 'categories');
+
+    // Отримання даних у реальному часі 
+    onValue(categoriesRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        setCategories(data);
+      }
+    });
+  }, []);
 
   return (
-    <section id="categories" style={{ textAlign: 'center', marginBottom: '30px' }}>
-      <h2>Категорії страв</h2>
-      <div className="category-tags" style={{ display: 'flex', gap: '10px', justifyContent: 'center', flexWrap: 'wrap' }}>
-        
-        {/* Проходимося по масиву категорій і малюємо кнопку для кожної */}
-        {categoriesList.map(category => (
-          <button
-            key={category}
-            onClick={() => onSelectCategory(category)}
-            style={{
-              padding: '10px 20px',
-              // Якщо категорія обрана, робимо її помаранчевою, якщо ні — білою
-              backgroundColor: selectedCategory === category ? '#d35400' : '#fff',
-              color: selectedCategory === category ? '#fff' : '#4a3b32',
-              border: '2px solid #d35400',
-              borderRadius: '25px',
-              cursor: 'pointer',
-              fontWeight: 'bold',
-              transition: '0.3s'
-            }}
-          >
-            {category}
-          </button>
-        ))}
-
-      </div>
-    </section>
+    <nav className="categories">
+      {categories.map((category, index) => (
+        <button 
+          key={index} 
+          className={selectedCategory === category ? 'active' : ''}
+          onClick={() => onSelectCategory(category)}
+        >
+          {category}
+        </button>
+      ))}
+    </nav>
   );
-}
+};
 
 export default Categories;
