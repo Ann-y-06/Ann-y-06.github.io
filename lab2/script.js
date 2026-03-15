@@ -46,7 +46,7 @@ const submitBtn = newRecipeForm.querySelector('button[type="submit"]');
 // ГЛОБАЛЬНА ЗМІННА: зберігає картку, яку ми зараз редагуємо
 let currentEditCard = null;
 
-// 3. Виводимо рецепти (Цикл for)
+// 3. Виводимо рецепти 
 for (let i = 0; i < recipesData.length; i++) {
     const recipe = recipesData[i];
     const cardHTML = `
@@ -62,7 +62,7 @@ for (let i = 0; i < recipesData.length; i++) {
     recipesContainer.innerHTML += cardHTML;
 }
 
-// 4. Виводимо коментарі (Цикл for)
+// 4. Виводимо коментарі 
 for (let i = 0; i < commentsData.length; i++) {
     const comment = commentsData[i];
     const commentHTML = `
