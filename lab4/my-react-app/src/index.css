@@ -1,0 +1,287 @@
+/* ==================================================== */
+/* --- БАЗОВІ СТИЛІ ТА ШРИФТИ --- */
+/* ==================================================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    margin: 0; 
+    padding: 0; 
+    background-color: #fdfaf6; /* Ніжний кремовий фон */
+    color: #4e342e; /* Теплий темно-коричневий для тексту */
+}
+
+/* Робимо всі зображення гнучкими (Вимога завдання 3) */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px; 
+}
+
+/* ==================================================== */
+/* --- ЗАГОЛОВОК ТА НАВІГАЦІЯ --- */
+/* ==================================================== */
+header {
+    background-color: #5d4037; /* Насичений колір кави/шоколаду */
+    color: #ffffff; 
+    padding: 25px 0; 
+    text-align: center; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+}
+
+header h1 {
+    margin: 0 0 15px 0;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none; 
+    padding: 0; 
+    margin: 0;
+    display: flex; /* Flexbox для горизонтального меню */
+    justify-content: center;
+    gap: 30px; 
+}
+
+nav ul li a {
+    color: #ffffff; 
+    text-decoration: none; 
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    transition: color 0.3s ease; 
+}
+
+/* Ефект при наведенні на посилання - золотистий/медовий акцент */
+nav ul li a:hover {
+    color: #f39c12; 
+}
+
+/* ==================================================== */
+/* --- ОСНОВНИЙ КОНТЕНТ --- */
+/* ==================================================== */
+main {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+h2 {
+    color: #5d4037; /* Колір кави */
+    border-bottom: 2px solid #d35400; /* Теплий карамельно-оранжевий */
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+/* ==================================================== */
+/* --- КАТЕГОРІЇ (ТЕГИ) --- */
+/* ==================================================== */
+.category-tags {
+    display: flex;
+    flex-wrap: wrap; /* Дозволяє тегам переноситись на новий рядок */
+    gap: 15px;
+}
+
+.tag {
+    background-color: #ffffff;
+    color: #5d4037;
+    padding: 10px 20px;
+    border-radius: 30px; /* Робимо їх круглими як таблетки */
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    background-color: #d35400;
+    color: #ffffff;
+    transform: translateY(-3px); /* Трохи піднімаються при наведенні */
+}
+
+/* ==================================================== */
+/* --- ФОРМА ДОДАВАННЯ РЕЦЕПТУ --- */
+/* ==================================================== */
+.recipe-form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #5d4037;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    box-sizing: border-box; /* Щоб поля не вилазили за краї форми */
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: #d35400; /* Підсвічування оранжевим при введенні */
+}
+
+.btn-submit {
+    background-color: #d35400;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.btn-submit:hover {
+    background-color: #5d4037;
+}
+
+/* ==================================================== */
+/* ---  СІТКА РЕЦЕПТІВ --- */
+/* ==================================================== */
+.recipes-grid {
+    display: grid;
+    /* Обмежуємо кількість колонок: максимум 3, мінімум 300px */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 30px;
+    margin-top: 25px;
+    justify-content: center; /* Центруємо картки, якщо їх мало */
+}
+
+/* Обмежуємо максимальну ширину картки, щоб вона не роздувалася */
+.recipe-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 400px; /* Картка не буде ширшою за 400px */
+    width: 100%;
+    margin: 0 auto;  /* Центрування всередині комірки */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Робимо фотографії однаковими і красивими */
+.recipe-card img {
+    width: 100%;
+    height: 250px;     /* Всі фото будуть однакової висоти */
+    object-fit: cover; /* Фото буде ідеально вписане без деформацій */
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+/* ==================================================== */
+/* --- ФІКС КАРТИНОК У КАРТКАХ --- */
+/* ==================================================== */
+.recipe-card img {
+    width: 100%;           /* Завжди на всю ширину картки */
+    height: 250px;         /* Фіксована висота для всіх фотографій */
+    object-fit: cover;     /* Обрізає зайве, зберігаючи пропорції (як в Інстаграмі) */
+    border-radius: 12px;   /* Твої фірмові заокруглені кути */
+    display: block;        /* Прибирає нижній відступ під картинкою */
+}
+
+/* ==================================================== */
+/* --- КОМЕНТАРІ --- */
+/* ==================================================== */
+.comment {
+    background-color: #ffffff;
+    padding: 20px;
+    border-left: 4px solid #d35400;
+    margin-bottom: 20px;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+}
+
+.comment h4 {
+    margin: 0 0 8px 0;
+    color: #5d4037;
+}
+
+.comment p {
+    margin: 0;
+    font-style: italic;
+    color: #6d4c41; /* Світліший коричневий для тексту коментаря */
+}
+
+/* ==================================================== */
+/* --- НИЖНІЙ КОЛОНТИТУЛ (ФУТЕР) --- */
+/* ==================================================== */
+footer {
+    text-align: center; 
+    padding: 30px 20px; 
+    background-color: #5d4037; 
+    color: #fdfaf6; 
+    margin-top: 60px;
+}
+
+/* Клас для приховування елементів через JavaScript */
+.hidden {
+    display: none !important;
+}
+
+/* ==================================================== */
+/* --- АДАПТИВНИЙ ДИЗАЙН (МЕДІА-ЗАПИТИ) - ЗАВДАННЯ 3 --- */
+/* ==================================================== */
+
+/* 1. Медіа-запит для планшетів (екрани шириною до 768px) */
+@media (max-width: 768px) {
+    nav ul {
+        gap: 15px;
+    }
+    
+    main {
+        padding: 0 15px;
+    }
+    
+    header h1 {
+        font-size: 24px;
+    }
+}
+
+/* 2. Медіа-запит для мобільних телефонів (екрани шириною до 480px) */
+@media (max-width: 480px) {
+    header {
+        padding: 15px 0;
+    }
+
+    nav ul {
+        flex-direction: column; /* Вертикальне меню на телефонах */
+        align-items: center;
+        gap: 12px;
+    }
+
+    .recipes-grid {
+        grid-template-columns: 1fr; /* Одна колонка карток на телефонах */
+    }
+
+    .recipe-form {
+        padding: 20px; /* Трохи менші відступи для форми на телефонах */
+    }
+}
