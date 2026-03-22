@@ -31,7 +31,7 @@ function App() {
 
   // 2. Завантаження рецептів через сервер (Завдання 3 за методичкою)
   const loadRecipes = () => {
-    fetch("http://localhost:5000/api/recipes")
+    fetch("https://recepies-ko8y.onrender.com")
       .then(res => res.json())
       .then(data => {
         // Фільтруємо можливі некоректні записи та зберігаємо відсортований сервером масив
@@ -81,7 +81,7 @@ function App() {
     };
 
     try {
-      const response = await fetch("http://localhost:5000/api/recipes", {
+      const response = await fetch("https://recepies-ko8y.onrender.com", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(dataToSend),
@@ -105,7 +105,7 @@ function App() {
     if (!window.confirm("Ви впевнені, що хочете видалити цей рецепт?")) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/api/recipes/${recipeId}`, {
+      const response = await fetch(`https://recepies-ko8y.onrender.com/api/recipes${recipeId}`, {
         method: "DELETE",
       });
 
